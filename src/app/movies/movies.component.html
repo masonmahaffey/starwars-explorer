@@ -1,0 +1,70 @@
+<div style="max-width: 600px; margin-left: auto; margin-right: auto;margin-bottom: 25px;margin-top: 25px;">
+  <button routerLink="/" style="border: 0px;font-size: 30px;padding-bottom: 0px;padding-top: 0px;margin-top: 0px;" type="button" class="btn btn-outline-warning skip-animation-button">
+    ←
+  </button>
+</div>
+
+
+<div style="max-width: 600px; margin-left: auto; margin-right: auto;margin-bottom: 25px;margin-top: 25px;">
+  <input (keyup.enter)="search()" [(ngModel)]="searchCriteria" class="form-control" type="text" placeholder="Search movies..." aria-label="Search" style="border-radius: 0px;display: inline;width: 60%;">
+  <button (click)="search()" class="btn btn-outline-warning" style="border-radius: 0px;display: inline; width: 37%;margin-top: -3px;margin-left: 15px;">Search</button>
+</div>
+
+<div *ngIf="loading" class="spinner-border text-warning" style="width: 5rem; height: 5rem;position: absolute; top: 40vh; left: 50%;" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+<div style="max-width: 600px; margin: auto;">
+
+  <div class="accordion" id="accordionExample">
+    <div *ngFor="let movie of movies;let i = index;" class="card" style="border-radius: 0px;">
+      <div class="card-header" [attr.id]="'heading' + i">
+        <h2 class="mb-0">
+          <button style="color: black;font-weight: bolder;" class="btn btn-link collapsed" type="button" data-toggle="collapse" [attr.data-target]="'#collapse' + i" aria-expanded="false" [attr.aria-controls]="'#collapse' + i">
+            {{movie.title}}
+          </button>
+        </h2>
+        <span style="right: 31px; top: 22px; position: absolute;">{{movie.birth_year}}</span>
+      </div>
+
+      <div [attr.id]="'collapse' + i" class="collapse" [attr.aria-labelledby]="'heading' + i" data-parent="#accordionExample">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-8">
+                <div class="row">
+                  <div class="col-6">
+                    <b>Director:</b> {{movie.director}}
+                  </div>
+                  <div class="col-6">
+                    <b>Episode:</b> {{movie.episode_id}}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <b>Producer:</b> {{movie.producer}}
+                  </div>
+                  <div class="col-6">
+                    <b>Release:</b> {{movie.release_date}}
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <button style="border-radius: 0px;font-size: 12px;margin-top: 7px;" routerLink="/movies/{{movie.url.split('/')[5]}}" type="button" class="btn btn-outline-dark btn-lg">More Details →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!loading" style="margin-top: 20px;">
+    <button *ngIf="page > 0" (click)="previousPage()" style="color: white;float: left;margin-left: 10px;color: gold;font-weight: bold;" class="btn btn-sm btn-warning-outline">Previous</button>
+    <button *ngIf="next.length > 0" (click)="nextPage()" style="color: white;float: right;margin-right: 10px;color: gold;font-weight: bold;" class="btn btn-sm btn-warning-outline">Next</button>
+  </div>
+
+  <div *ngIf="!loading">
+    <h5 style="text-align: center;margin-bottom: 100px;color: gold;">{{page}}</h5>
+  </div>
+</div>

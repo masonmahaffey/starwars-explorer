@@ -1,0 +1,38 @@
+<div style="max-width: 600px; margin-left: auto; margin-right: auto;margin-bottom: 25px;margin-top: 25px;">
+  <button routerLink="/" style="border: 0px;font-size: 30px;padding-bottom: 0px;padding-top: 0px;margin-top: 0px;" type="button" class="btn btn-outline-warning skip-animation-button">
+    ←
+  </button>
+</div>
+
+<div *ngIf="loading" class="spinner-border text-warning" style="width: 5rem; height: 5rem;position: absolute; top: 40vh; left: 50%;" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+<div style="max-width: 600px; margin: auto;">
+
+  <h2 style="color: white;text-align: center;font-weight: bolder;">{{person.name}}</h2>
+  <hr style="background-color: gold;"/>
+  <h5 style="color: white;text-align: center;">{{person.height}} cm</h5>
+  <h5 style="color: white;text-align: center;">{{person.mass}} kg</h5>
+  <h5 style="color: white;text-align: center;">{{person.hair_color}}</h5>
+  <h5 style="color: white;text-align: center;">{{person.skin_color}}</h5>
+  <h5 style="color: white;text-align: center;">{{person.eye_color}}</h5>
+  <h5 style="color: white;text-align: center;">{{person.birth_year}}</h5>
+  <h5 style="color: white;text-align: center;">{{person.gender}}</h5>
+<!--  <h5 style="color: white;text-align: center;">{{planet.name}}'s homeworld</h5>-->
+<!--  {{planet.homeworld}}-->
+<!--  <h5 style="color: white;text-align: center;">{{planet.name}}'s species</h5>-->
+<!--  planet.species-->
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

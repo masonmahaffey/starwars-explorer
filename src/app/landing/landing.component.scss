@@ -1,0 +1,224 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron:700);
+
+.btn-block {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.skip-animation-button {
+  position: absolute;
+  bottom: 10vh;
+  right: 5vw;
+  animation-name: wobble;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+
+.millenium-falcon {
+  animation-name: fly;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+}
+
+.btn-block {
+  font-weight: bolder;
+}
+
+.hide-animation {
+  display: none;
+}
+
+h1, h2, h3, h4, p {
+  color: white;
+  text-align: center;
+}
+
+.title-text {
+  position: absolute;
+  top: 40vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+.title-1 {
+  opacity: 0;
+  animation-name: fade;
+  animation-iteration-count: 1;
+  animation-duration: 5s;
+}
+
+.title-2 {
+  opacity: 0;
+  animation-name: fade;
+  animation-iteration-count: 1;
+  animation-duration: 4s;
+  animation-delay: 5s;
+}
+
+.title-3 {
+  opacity: 0;
+  animation-name: title;
+  animation-iteration-count: 1;
+  animation-duration: 5s;
+  animation-delay: 9s;
+  color: gold;
+  font-size: 70px;
+  font-weight:bold;
+  top: 30vh;
+  font-family: StarJedi;
+}
+
+@keyframes fade{
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes title{
+  0% {
+    opacity: 0;
+  }
+  20% {
+    font-size: 100px;
+  }
+  80% {
+    font-size: 80px;
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+/* Stars
+------------------------------------- */
+
+#space, .stars {
+  background-color: black;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.stars {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: zoom 10s 30;
+  opacity: 0;
+}
+
+.stars:nth-child(1) {
+  background-position: 50% 50%;
+  animation-delay: 0s;
+}
+.stars:nth-child(2) {
+  background-position: 20% 60%;
+  animation-delay: 1s;
+}
+.stars:nth-child(3) {
+  background-position: -20% -30%;
+  animation-delay: 2s;
+}
+.stars:nth-child(4) {
+  background-position: 40% -80%;
+  animation-delay: 3s;
+}
+.stars:nth-child(5) {
+  background-position: -20% 30%;
+  animation-delay: 4s;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    animation-timing-function: ease-in;
+  }
+  85% {
+    opacity: 1;
+    transform: scale(2.8);
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.5);
+  }
+}
+
+/* Demo syles
+------------------------------------- */
+
+body {
+  background: #000;
+  font-family: 'Orbitron', sans-serif;
+}
+
+
+/* ------------wobble animation------ */
+
+@keyframes wobble {
+  0% { transform: rotate(-1deg); }
+  10% { transform: rotate(3deg); }
+  20% { transform: rotate(-5deg); }
+  30% { transform: rotate(3deg); }
+  40% { transform: rotate(-2deg); }
+  50% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.main-title {
+  color: gold;
+  font-size: 50px;
+  font-weight:bold;
+  top: 100px;
+  position: relative;
+}
+
+@media only screen and (min-width: 1020px) {
+  .main-title {
+    color: gold;
+    font-size: 60px;
+    font-weight:bold;
+    top: 100px;
+    position: relative;
+  }
+}
+
+/* -------- millenium falcon animation -------- */
+
+@keyframes fly {
+  0% { top: -200px; left: 30vw; }
+  100% { top: 110vh; left: 100vw; }
+}
+
+.btn-warning {
+  background-color: black;
+  color: gold;
+}
+
+.btn-warning:hover {
+  background-color: gold;
+  color: black;
+}

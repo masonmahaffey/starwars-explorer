@@ -1,0 +1,26 @@
+<div [ngClass]="!animation.animated ? 'show-animation':'hide-animation'">
+  <h1 class="title-text title-1 animation">Made a short time ago...</h1>
+  <h1 class="title-text title-2 animation">In a Galaxy not far away...</h1>
+  <h1 class="title-text title-3 animation">Star Wars Explorer</h1>
+
+  <div id="space">
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+  </div>
+
+  <button (click)="skipAnimation()" type="button" class="btn btn-outline-warning skip-animation-button">
+    Skip →
+  </button>
+</div>
+
+<img [ngClass]="!animation.animated ? 'hide-animation':'millenium-falcon'" style="position: absolute; left: 10px; top: 10px;height: 164px;z-index: 2;" src="https://www.pngkit.com/png/full/10-107107_millennium-falcon-star-wars-transparent-images-star-wars.png"/>
+<h1 [ngClass]="!animation.animated ? 'hide-animation':'main-title'" class="main-title" style="font-family: StarJedi;font-size: 70px;">Star Wars Explorer</h1>
+
+<div style="padding: 100px; margin-top: 15vh; max-width: 900px; margin-left: auto; margin-right: auto;">
+  <button type="button" class="btn btn-warning btn-lg btn-block" routerLink="/people">People</button>
+  <button type="button" class="btn btn-warning btn-lg btn-block" routerLink="/planets">Planets</button>
+  <button type="button" class="btn btn-warning btn-lg btn-block" routerLink="/movies">Movies</button>
+</div>
