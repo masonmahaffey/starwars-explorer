@@ -4,6 +4,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-First, run the following command in your terminal `npm run disable_cors` !
+First, run the following command in your terminal `npm run disable_cors` 
 
 Next, run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
